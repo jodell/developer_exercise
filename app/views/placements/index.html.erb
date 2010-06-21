@@ -1,0 +1,30 @@
+<h1>Listing placements</h1>
+
+<table>
+  <tr>
+    <th>Section</th>
+    <th>Ad type</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+    <th>Start date</th>
+    <th>End date</th>
+  </tr>
+
+<% @placements.each do |placement| %>
+  <tr>
+    <td><%=h placement.section %></td>
+    <td><%=h placement.ad_type %></td>
+    <td><%=h placement.quantity %></td>
+    <td><%=h placement.rate %></td>
+    <td><%=h placement.start_date %></td>
+    <td><%=h placement.end_date %></td>
+    <td><%= link_to 'Show', placement %></td>
+    <td><%= link_to 'Edit', edit_placement_path(placement) %></td>
+    <td><%= link_to 'Destroy', placement, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New placement', new_placement_path %>

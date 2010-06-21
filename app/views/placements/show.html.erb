@@ -1,0 +1,33 @@
+<p>
+  <b>Section:</b>
+  <%=h @placement.section %>
+</p>
+
+<p>
+  <b>Ad type:</b>
+  <%=h @placement.ad_type %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @placement.quantity %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%=h @placement.rate %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @placement.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @placement.end_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_placement_path(@placement) %> |
+<%= link_to 'Back', placements_path %>

@@ -1,0 +1,18 @@
+<h1>Listing buys</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @buys.each do |buy| %>
+  <tr>
+    <td><%= link_to 'Show', buy %></td>
+    <td><%= link_to 'Edit', edit_buy_path(buy) %></td>
+    <td><%= link_to 'Destroy', buy, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New buy', new_buy_path %>

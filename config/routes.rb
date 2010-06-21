@@ -1,4 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :placements
+
+  map.resources :buys
+
+  map.resources :plans
+
+  map.resources :plans
+
+  map.resources :plans
+
   map.resources :sites
 
   map.resources :plans
