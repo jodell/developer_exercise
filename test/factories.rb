@@ -6,11 +6,18 @@ Factory.define(:placement) do |placement|
 end
 
 Factory.define(:buy) do |buy|
-  buy.site_name "facebook.com"
+#  buy.site_name "facebook.com"
   buy.placements { |placements| [placements.association(:placement)] }
 end
 
 Factory.define(:plan) do |plan|
   plan.advertiser_name "Bossy Kitten"
-  plan.buys { |buys| [buys.association(:buy)]  }
+  plan.buys { |buys| [buys.association(:buy)] }
+end
+
+Factory.define(:site) do |site|
+  site.name 'facebook.com'
+  site.url 'http://facebook.com'
+  site.contact 'Mark Zuckerberg'
+  site.buys { |buys| [buys.association(:buy)] }
 end

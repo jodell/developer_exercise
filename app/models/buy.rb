@@ -2,7 +2,8 @@ class Buy < ActiveRecord::Base
   belongs_to :plan
   has_many :placements
   validates_presence_of :placements
-  validates_presence_of :site_name
+  #validates_presence_of :site_name
+  belongs_to :site
 
   def cost
     placements.inject(0) do |n, p|
