@@ -4,7 +4,8 @@ class Plan < ActiveRecord::Base
   has_many :sites, :through => :buys
 
   def self.find_all_on_site(site)
-    Buy.find(:all, :conditions => ['site_id = ?', site.id]).collect { |b| b.plan }
+    #Buy.find(:all, :conditions => ['site_id = ?', site.id]).collect { |b| b.plan }.uniq
+    site && Buy.scoped_by_site_id(site.id).collect { |b| b.plan }.uniq
   end
 
   def cost
@@ -12,14 +13,5 @@ class Plan < ActiveRecord::Base
       n + b.cost
     end
   end
-
-#  def self.find_all_with_buys_for_site(site)
-#    if site
-#      if buys = Buy.find_by_site(site)
-#        return buys.plans
-#      end
-#    end
-#    nil
-#  end
 
 end
